@@ -1,0 +1,142 @@
+{
+  "dataset_name": "open_meteo_marine",
+  "source_api": "https://marine-api.open-meteo.com/v1/marine",
+  "latitude": 41.0,
+  "longitude": -8.0,
+  "start_date": "2026-09-25",
+  "end_date": "2026-09-25",
+  "requested_variables": [
+    "wave_height"
+  ],
+  "source_provenance": {
+    "api_url": "https://marine-api.open-meteo.com/v1/marine",
+    "retrieval_timestamp_utc": "2026-09-27T03:33:53.548373+00:00",
+    "processing_version": "1.0.0"
+  },
+  "original_row_count": 1,
+  "processed_row_count": 1,
+  "null_value_count": 0,
+  "duplicate_timestamp_count": 0,
+  "duplicate_timestamps": [],
+  "invalid_value_count": 0,
+  "invalid_value_indexes": [],
+  "unit_conversions": [],
+  "units": {
+    "wave_height": "m"
+  },
+  "missing_values": {
+    "timestamp": 0,
+    "latitude": 0,
+    "longitude": 0,
+    "source": 0,
+    "wave_height_m": 0,
+    "wave_direction_deg": 1,
+    "wave_period_s": 1,
+    "wind_wave_height_m": 1,
+    "wind_wave_direction_deg": 1,
+    "swell_wave_height_m": 1,
+    "swell_wave_direction_deg": 1,
+    "ocean_current_velocity_m_s": 1,
+    "ocean_current_direction_deg": 1,
+    "sea_surface_temperature_c": 1
+  },
+  "columns_detected": [
+    "timestamp",
+    "latitude",
+    "longitude",
+    "source",
+    "wave_height_m",
+    "wave_direction_deg",
+    "wave_period_s",
+    "wind_wave_height_m",
+    "wind_wave_direction_deg",
+    "swell_wave_height_m",
+    "swell_wave_direction_deg",
+    "ocean_current_velocity_m_s",
+    "ocean_current_direction_deg",
+    "sea_surface_temperature_c"
+  ],
+  "schema": {
+    "timestamp": {
+      "type": "datetime",
+      "unit": "ISO8601",
+      "description": "Observation timestamp in local time."
+    },
+    "latitude": {
+      "type": "float",
+      "unit": "degrees",
+      "description": "Latitude of the observation."
+    },
+    "longitude": {
+      "type": "float",
+      "unit": "degrees",
+      "description": "Longitude of the observation."
+    },
+    "source": {
+      "type": "string",
+      "unit": "n/a",
+      "description": "Source system name."
+    },
+    "wave_height_m": {
+      "type": "float",
+      "unit": "m",
+      "description": "Wave height in metres."
+    },
+    "wave_direction_deg": {
+      "type": "float",
+      "unit": "deg",
+      "description": "Mean wave direction in degrees from north."
+    },
+    "wave_period_s": {
+      "type": "float",
+      "unit": "s",
+      "description": "Wave period in seconds."
+    },
+    "wind_wave_height_m": {
+      "type": "float",
+      "unit": "m",
+      "description": "Wind wave height in metres."
+    },
+    "wind_wave_direction_deg": {
+      "type": "float",
+      "unit": "deg",
+      "description": "Wind wave direction in degrees from north."
+    },
+    "swell_wave_height_m": {
+      "type": "float",
+      "unit": "m",
+      "description": "Swell wave height in metres."
+    },
+    "swell_wave_direction_deg": {
+      "type": "float",
+      "unit": "deg",
+      "description": "Swell wave direction in degrees from north."
+    },
+    "ocean_current_velocity_m_s": {
+      "type": "float",
+      "unit": "m/s",
+      "description": "Ocean current velocity in metres per second."
+    },
+    "ocean_current_direction_deg": {
+      "type": "float",
+      "unit": "deg",
+      "description": "Ocean current direction in degrees from north."
+    },
+    "sea_surface_temperature_c": {
+      "type": "float",
+      "unit": "\u00b0C",
+      "description": "Sea surface temperature in Celsius."
+    }
+  },
+  "raw_response_path": "data\\raw\\marine\\open_meteo_marine_raw.json",
+  "clean_csv_path": "data\\processed\\marine\\open_meteo_marine_clean.csv",
+  "clean_parquet_path": "data\\processed\\marine\\open_meteo_marine_clean.parquet",
+  "transformations_performed": [
+    "Fetched hourly marine observations from the official Open-Meteo Marine API.",
+    "Preserved the original raw JSON payload without modifying the source response.",
+    "Validated required hourly fields and coordinate bounds.",
+    "Normalized marine variables into a tabular schema keyed by timestamp and location.",
+    "Recorded nulls, duplicate timestamps, invalid values, and unit conversions in quality metadata.",
+    "Persisted cleaned CSV, Parquet, schema, and quality-report artifacts."
+  ]
+}

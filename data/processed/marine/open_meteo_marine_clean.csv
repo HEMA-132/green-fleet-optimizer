@@ -1,0 +1,2 @@
+timestamp,latitude,longitude,source,wave_height_m,wave_direction_deg,wave_period_s,wind_wave_height_m,wind_wave_direction_deg,swell_wave_height_m,swell_wave_direction_deg,ocean_current_velocity_m_s,ocean_current_direction_deg,sea_surface_temperature_c
+2026-09-25T00:00,41.0,-8.0,Open-Meteo Marine API,1.3,,,,,,,,,

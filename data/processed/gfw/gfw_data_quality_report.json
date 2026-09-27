@@ -1,0 +1,60 @@
+{
+  "dataset_name": "gfw_vessel_identity",
+  "dataset_type": "GFW API",
+  "source_provenance": {
+    "project_repository_url": "https://github.com/HEMA-132/green-fleet-optimizer.git",
+    "dataset_repository_url": "https://globalfishingwatch.org/our-apis/documentation",
+    "dataset_source_note": "Global Fishing Watch vessel-identity API accessed via official v3 endpoints and bearer-token authentication.",
+    "source_file_path": "data/raw/gfw/gfw_vessel_search_raw.json"
+  },
+  "original_row_count": 1,
+  "processed_row_count": 1,
+  "query": "7831410",
+  "limit": 3,
+  "offset": 0,
+  "dataset": "public-global-vessel-identity:latest",
+  "schema_mapping": {
+    "vessel_id": "vessel_id",
+    "vessel_type": "vessel_type",
+    "route_id": null,
+    "period": "updated_at",
+    "distance": null,
+    "fuel_type": null,
+    "fuel_consumption": null,
+    "co2_emissions": null,
+    "weather_condition": null,
+    "engine_efficiency": null,
+    "speed": "speed_knots"
+  },
+  "raw_response_path": "data\\raw\\gfw\\gfw_vessel_search_raw.json",
+  "clean_csv_path": "data\\processed\\gfw\\gfw_vessel_identity_clean.csv",
+  "clean_parquet_path": "data\\processed\\gfw\\gfw_vessel_identity_clean.parquet",
+  "missing_values": {
+    "vessel_id": 0,
+    "vessel_type": 1,
+    "name": 0,
+    "flag": 0,
+    "mmsi": 0,
+    "imo": 0,
+    "speed_knots": 1,
+    "updated_at": 1
+  },
+  "column_count": 8,
+  "columns_detected": [
+    "vessel_id",
+    "vessel_type",
+    "name",
+    "flag",
+    "mmsi",
+    "imo",
+    "speed_knots",
+    "updated_at"
+  ],
+  "transformations_performed": [
+    "Requested vessel identity data from the official GFW v3 API",
+    "Stored the raw API payload without modifying the source response",
+    "Normalized the vessel payload into a tabular dataset",
+    "Mapped fields into the GreenFleet canonical schema convention",
+    "Persisted cleaned CSV, Parquet, and quality-report outputs"
+  ]
+}

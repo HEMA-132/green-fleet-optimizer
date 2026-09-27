@@ -1,0 +1,72 @@
+{
+  "timestamp": {
+    "type": "datetime",
+    "unit": "ISO8601",
+    "description": "Observation timestamp in local time."
+  },
+  "latitude": {
+    "type": "float",
+    "unit": "degrees",
+    "description": "Latitude of the observation."
+  },
+  "longitude": {
+    "type": "float",
+    "unit": "degrees",
+    "description": "Longitude of the observation."
+  },
+  "source": {
+    "type": "string",
+    "unit": "n/a",
+    "description": "Source system name."
+  },
+  "wave_height_m": {
+    "type": "float",
+    "unit": "m",
+    "description": "Wave height in metres."
+  },
+  "wave_direction_deg": {
+    "type": "float",
+    "unit": "deg",
+    "description": "Mean wave direction in degrees from north."
+  },
+  "wave_period_s": {
+    "type": "float",
+    "unit": "s",
+    "description": "Wave period in seconds."
+  },
+  "wind_wave_height_m": {
+    "type": "float",
+    "unit": "m",
+    "description": "Wind wave height in metres."
+  },
+  "wind_wave_direction_deg": {
+    "type": "float",
+    "unit": "deg",
+    "description": "Wind wave direction in degrees from north."
+  },
+  "swell_wave_height_m": {
+    "type": "float",
+    "unit": "m",
+    "description": "Swell wave height in metres."
+  },
+  "swell_wave_direction_deg": {
+    "type": "float",
+    "unit": "deg",
+    "description": "Swell wave direction in degrees from north."
+  },
+  "ocean_current_velocity_m_s": {
+    "type": "float",
+    "unit": "m/s",
+    "description": "Ocean current velocity in metres per second."
+  },
+  "ocean_current_direction_deg": {
+    "type": "float",
+    "unit": "deg",
+    "description": "Ocean current direction in degrees from north."
+  },
+  "sea_surface_temperature_c": {
+    "type": "float",
+    "unit": "\u00b0C",
+    "description": "Sea surface temperature in Celsius."
+  }
+}

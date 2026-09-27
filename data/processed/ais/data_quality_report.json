@@ -1,0 +1,186 @@
+{
+  "dataset_name": "noaa_marinecadastre_ais_broadcast_points",
+  "raw_source_path": "D:\\SOFTWARE\\green-fleet-optimizer\\data\\raw\\ais\\ais-2025-01-08.tgz",
+  "raw_file_size_bytes": 162925674,
+  "compression_format": "Zstandard frame containing a direct CSV stream",
+  "raw_columns": [
+    "mmsi",
+    "base_date_time",
+    "longitude",
+    "latitude",
+    "sog",
+    "cog",
+    "heading",
+    "vessel_name",
+    "imo",
+    "call_sign",
+    "vessel_type",
+    "status",
+    "length",
+    "width",
+    "draft",
+    "cargo",
+    "transceiver"
+  ],
+  "processed_columns": [
+    "mmsi",
+    "timestamp",
+    "longitude",
+    "latitude",
+    "speed_knots",
+    "course_over_ground_deg",
+    "heading_deg",
+    "vessel_name",
+    "imo",
+    "call_sign",
+    "vessel_type",
+    "navigation_status",
+    "length_m",
+    "width_m",
+    "draft_m",
+    "cargo",
+    "transceiver"
+  ],
+  "raw_row_count": 5929631,
+  "processed_row_count": 5928519,
+  "unique_vessel_count": 16294,
+  "timestamp_range_utc": [
+    "2025-01-08T00:00:00Z",
+    "2025-01-08T23:59:59Z"
+  ],
+  "geographic_range": {
+    "latitude": [
+      2.30697,
+      85.28678
+    ],
+    "longitude": [
+      -175.14678,
+      146.49848
+    ]
+  },
+  "missing_values_by_raw_column": {
+    "mmsi": 0,
+    "base_date_time": 0,
+    "longitude": 0,
+    "latitude": 0,
+    "sog": 12540,
+    "cog": 1069760,
+    "heading": 3000096,
+    "vessel_name": 17112,
+    "imo": 3563659,
+    "call_sign": 724581,
+    "vessel_type": 42576,
+    "status": 2099726,
+    "length": 131085,
+    "width": 208548,
+    "draft": 2626457,
+    "cargo": 1962523,
+    "transceiver": 0
+  },
+  "missing_coordinate_rows": 0,
+  "invalid_coordinate_rows": 0,
+  "invalid_timestamp_rows": 0,
+  "duplicate_observation_count": 1112,
+  "processing_seconds": 1479.63,
+  "processed_file_size_bytes": 305968306,
+  "chunksize": 100000,
+  "source_provenance": {
+    "source": "NOAA MarineCadastre AIS Broadcast Points",
+    "raw_file_preserved": true,
+    "transformations": [
+      "Streamed Zstandard-compressed CSV without extraction.",
+      "Normalized source names into stable AIS output names.",
+      "Normalized timestamps to UTC.",
+      "Removed rows missing required MMSI, timestamp, or valid coordinates.",
+      "Removed duplicate observations keyed by MMSI, timestamp, longitude, and latitude."
+    ]
+  },
+  "schema": {
+    "mmsi": {
+      "type": "string",
+      "unit": "n/a",
+      "description": "Maritime Mobile Service Identity."
+    },
+    "timestamp": {
+      "type": "datetime",
+      "unit": "UTC",
+      "description": "AIS broadcast timestamp normalized to UTC."
+    },
+    "longitude": {
+      "type": "float",
+      "unit": "degrees",
+      "description": "Broadcast longitude."
+    },
+    "latitude": {
+      "type": "float",
+      "unit": "degrees",
+      "description": "Broadcast latitude."
+    },
+    "speed_knots": {
+      "type": "float",
+      "unit": "knots",
+      "description": "Speed over ground."
+    },
+    "course_over_ground_deg": {
+      "type": "float",
+      "unit": "degrees",
+      "description": "Course over ground."
+    },
+    "heading_deg": {
+      "type": "float",
+      "unit": "degrees",
+      "description": "Vessel heading."
+    },
+    "vessel_name": {
+      "type": "string",
+      "unit": "n/a",
+      "description": "Broadcast vessel name."
+    },
+    "imo": {
+      "type": "string",
+      "unit": "n/a",
+      "description": "IMO vessel identifier when broadcast."
+    },
+    "call_sign": {
+      "type": "string",
+      "unit": "n/a",
+      "description": "Radio call sign when broadcast."
+    },
+    "vessel_type": {
+      "type": "integer",
+      "unit": "AIS code",
+      "description": "AIS vessel type code."
+    },
+    "navigation_status": {
+      "type": "integer",
+      "unit": "AIS code",
+      "description": "AIS navigation status code."
+    },
+    "length_m": {
+      "type": "float",
+      "unit": "m",
+      "description": "Reported vessel length."
+    },
+    "width_m": {
+      "type": "float",
+      "unit": "m",
+      "description": "Reported vessel width."
+    },
+    "draft_m": {
+      "type": "float",
+      "unit": "m",
+      "description": "Reported vessel draft."
+    },
+    "cargo": {
+      "type": "integer",
+      "unit": "AIS code",
+      "description": "AIS cargo code."
+    },
+    "transceiver": {
+      "type": "string",
+      "unit": "n/a",
+      "description": "AIS transceiver class."
+    }
+  },
+  "clean_csv_path": "D:\\SOFTWARE\\green-fleet-optimizer\\data\\processed\\ais\\ais_clean.csv"
+}

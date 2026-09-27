@@ -1,0 +1,166 @@
+{
+  "benchmark_type": "quantum-inspired performance comparison",
+  "dataset_path": "D:\\SOFTWARE\\green-fleet-optimizer\\data\\processed\\modeling\\fuel_prediction_dataset.csv",
+  "seeds": [
+    11,
+    22,
+    33,
+    44,
+    55
+  ],
+  "configuration": {
+    "fuel_weight": 0.7,
+    "co2_weight": 0.3,
+    "population_size": 30,
+    "iterations": 50,
+    "seed": 42,
+    "context_ship_type": null,
+    "context_month": null,
+    "context_weather_conditions": null,
+    "context_engine_efficiency": null
+  },
+  "evaluation_count_per_run": 1530,
+  "problem": {
+    "decision_names": [
+      "route_id",
+      "fuel_type"
+    ],
+    "context_names": [
+      "ship_type",
+      "month",
+      "weather_conditions",
+      "engine_efficiency"
+    ],
+    "fixed_context": {
+      "ship_type": "Oil Service Boat",
+      "month": "April",
+      "weather_conditions": "Calm",
+      "engine_efficiency": 82.775
+    },
+    "route_distance_medians": {
+      "Escravos-Lagos": 121.72,
+      "Lagos-Apapa": 123.62,
+      "Port Harcourt-Lagos": 128.88,
+      "Warri-Bonny": 117.36
+    },
+    "categories": {
+      "route_id": [
+        "Escravos-Lagos",
+        "Lagos-Apapa",
+        "Port Harcourt-Lagos",
+        "Warri-Bonny"
+      ],
+      "fuel_type": [
+        "Diesel",
+        "HFO"
+      ],
+      "ship_type": [
+        "Fishing Trawler",
+        "Oil Service Boat",
+        "Surfer Boat",
+        "Tanker Ship"
+      ],
+      "month": [
+        "April",
+        "August",
+        "December",
+        "February",
+        "January",
+        "July",
+        "June",
+        "March",
+        "May",
+        "November",
+        "October",
+        "September"
+      ],
+      "weather_conditions": [
+        "Calm",
+        "Moderate",
+        "Stormy"
+      ]
+    },
+    "bounds": [
+      [
+        0.0,
+        3.0
+      ],
+      [
+        0.0,
+        1.0
+      ]
+    ],
+    "objective": "weighted normalized surrogate fuel consumption and CO2 emissions",
+    "target_scales": {
+      "fuel_consumption": 4844.246534722222,
+      "co2_emissions": 13365.454881944444
+    },
+    "config": {
+      "fuel_weight": 0.7,
+      "co2_weight": 0.3,
+      "population_size": 30,
+      "iterations": 50,
+      "seed": 42,
+      "context_ship_type": null,
+      "context_month": null,
+      "context_weather_conditions": null,
+      "context_engine_efficiency": null
+    },
+    "assumptions": [
+      "Route is controllable and determines distance by observed route median.",
+      "Fuel type is controllable among observed fuel categories.",
+      "Ship selection is unsupported because no fleet-assignment data exists.",
+      "Month, weather, ship type, and engine efficiency are fixed context.",
+      "Marine observations are not joined to fuel records."
+    ],
+    "limitations": [
+      "Engine efficiency is not treated as a controllable setting because causality is not established.",
+      "Route median is descriptive, not a navigational distance guarantee.",
+      "Results are surrogate experiments, not operational recommendations."
+    ],
+    "marine_joined": false
+  },
+  "aggregate": {
+    "by_optimizer": {
+      "differential_evolution": {
+        "mean_objective": 0.5645479231588952,
+        "std_objective": 0.0,
+        "min_objective": 0.5645479231588952,
+        "max_objective": 0.5645479231588952,
+        "mean_predicted_fuel_consumption": 2737.2890946163243,
+        "mean_predicted_co2_emissions": 7529.475622728785,
+        "mean_runtime_seconds": 0.5482452399999602
+      },
+      "qpso": {
+        "mean_objective": 0.5645479231588952,
+        "std_objective": 0.0,
+        "min_objective": 0.5645479231588952,
+        "max_objective": 0.5645479231588952,
+        "mean_predicted_fuel_consumption": 2737.2890946163243,
+        "mean_predicted_co2_emissions": 7529.475622728785,
+        "mean_runtime_seconds": 0.3985563199967146
+      }
+    },
+    "improvement_percent_qpso_vs_classical": {
+      "objective": 0.0,
+      "predicted_fuel_consumption": 0.0,
+      "predicted_co2_emissions": 0.0,
+      "runtime_seconds": 27.30327763598212,
+      "runtime_interpretation": "positive means QPSO is faster; negative means QPSO is slower"
+    },
+    "paired_objective_analysis": {
+      "objective_difference_qpso_minus_classical_by_seed": {
+        "11": 0.0,
+        "22": 0.0,
+        "33": 0.0,
+        "44": 0.0,
+        "55": 0.0
+      },
+      "mean_difference": 0.0,
+      "std_difference": 0.0,
+      "note": "Descriptive paired comparison across five seeds; inferential significance is not asserted."
+    }
+  },
+  "paired_seed_count": 5,
+  "statistical_note": "Five paired seeds support descriptive comparison only; no superiority claim is made."
+}

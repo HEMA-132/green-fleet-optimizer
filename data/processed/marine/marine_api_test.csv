@@ -1,0 +1,2 @@
+mmsi,timestamp,latitude,longitude,sog,wave_height_m,wave_direction_deg,wave_period_s,wind_wave_height_m,wind_wave_direction_deg,swell_wave_height_m,swell_wave_direction_deg,ocean_current_velocity_m_s,ocean_current_direction_deg,sea_surface_temperature_c,marine_data_available,source,source_api,query_date,cache_path
+123456789,2025-01-08T00:01:05+00:00,26.11065,-80.15753,0.0,,,,,,,,,,,False,Open-Meteo Historical Marine API,https://marine-api.open-meteo.com/v1/marine,2025-01-08,data\cache\marine\173418fa68de4604e9eb23f4b588c9629bdbbbcbaf64dd2c176c3c011e0e9f60.json

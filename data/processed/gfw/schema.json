@@ -1,0 +1,13 @@
+{
+  "vessel_id": "vessel_id",
+  "vessel_type": "vessel_type",
+  "route_id": null,
+  "period": "updated_at",
+  "distance": null,
+  "fuel_type": null,
+  "fuel_consumption": null,
+  "co2_emissions": null,
+  "weather_condition": null,
+  "engine_efficiency": null,
+  "speed": "speed_knots"
+}

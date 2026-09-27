@@ -1,0 +1,87 @@
+{
+  "mmsi": {
+    "type": "string",
+    "unit": "n/a",
+    "description": "Maritime Mobile Service Identity."
+  },
+  "timestamp": {
+    "type": "datetime",
+    "unit": "UTC",
+    "description": "AIS broadcast timestamp normalized to UTC."
+  },
+  "longitude": {
+    "type": "float",
+    "unit": "degrees",
+    "description": "Broadcast longitude."
+  },
+  "latitude": {
+    "type": "float",
+    "unit": "degrees",
+    "description": "Broadcast latitude."
+  },
+  "speed_knots": {
+    "type": "float",
+    "unit": "knots",
+    "description": "Speed over ground."
+  },
+  "course_over_ground_deg": {
+    "type": "float",
+    "unit": "degrees",
+    "description": "Course over ground."
+  },
+  "heading_deg": {
+    "type": "float",
+    "unit": "degrees",
+    "description": "Vessel heading."
+  },
+  "vessel_name": {
+    "type": "string",
+    "unit": "n/a",
+    "description": "Broadcast vessel name."
+  },
+  "imo": {
+    "type": "string",
+    "unit": "n/a",
+    "description": "IMO vessel identifier when broadcast."
+  },
+  "call_sign": {
+    "type": "string",
+    "unit": "n/a",
+    "description": "Radio call sign when broadcast."
+  },
+  "vessel_type": {
+    "type": "integer",
+    "unit": "AIS code",
+    "description": "AIS vessel type code."
+  },
+  "navigation_status": {
+    "type": "integer",
+    "unit": "AIS code",
+    "description": "AIS navigation status code."
+  },
+  "length_m": {
+    "type": "float",
+    "unit": "m",
+    "description": "Reported vessel length."
+  },
+  "width_m": {
+    "type": "float",
+    "unit": "m",
+    "description": "Reported vessel width."
+  },
+  "draft_m": {
+    "type": "float",
+    "unit": "m",
+    "description": "Reported vessel draft."
+  },
+  "cargo": {
+    "type": "integer",
+    "unit": "AIS code",
+    "description": "AIS cargo code."
+  },
+  "transceiver": {
+    "type": "string",
+    "unit": "n/a",
+    "description": "AIS transceiver class."
+  }
+}

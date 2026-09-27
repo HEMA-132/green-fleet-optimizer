@@ -1,0 +1,82 @@
+{
+  "vessel_id": {
+    "description": "Unique vessel or asset identifier.",
+    "source": "ship_id",
+    "available": true
+  },
+  "vessel_type": {
+    "description": "Primary vessel category or class.",
+    "source": "ship_type",
+    "available": true
+  },
+  "route_id": {
+    "description": "Operational route or voyage corridor identifier.",
+    "source": "route_id",
+    "available": true
+  },
+  "period": {
+    "description": "Reporting period or month label used in the source dataset.",
+    "source": "month",
+    "available": true
+  },
+  "distance": {
+    "description": "Distance covered during the reporting period.",
+    "source": "distance",
+    "available": true
+  },
+  "fuel_type": {
+    "description": "Fuel type used during the period.",
+    "source": "fuel_type",
+    "available": true
+  },
+  "fuel_consumption": {
+    "description": "Fuel consumed during the period.",
+    "source": "fuel_consumption",
+    "available": true
+  },
+  "co2_emissions": {
+    "description": "CO2 emissions emitted during the period.",
+    "source": "CO2_emissions",
+    "available": true
+  },
+  "weather_condition": {
+    "description": "Observed weather condition for the voyage or period.",
+    "source": "weather_conditions",
+    "available": true
+  },
+  "engine_efficiency": {
+    "description": "Engine efficiency percentage reported by the source.",
+    "source": "engine_efficiency",
+    "available": true
+  },
+  "cargo_capacity": {
+    "description": "Maximum cargo capacity of the vessel.",
+    "source": null,
+    "available": false
+  },
+  "cargo_load": {
+    "description": "Cargo mass or payload loaded during the reporting period.",
+    "source": null,
+    "available": false
+  },
+  "speed": {
+    "description": "Vessel speed in operational units.",
+    "source": null,
+    "available": false
+  },
+  "wind_speed": {
+    "description": "Wind speed at the operating period.",
+    "source": null,
+    "available": false
+  },
+  "wave_height": {
+    "description": "Wave height at the operating period.",
+    "source": null,
+    "available": false
+  },
+  "current_speed": {
+    "description": "Ocean current speed at the operating period.",
+    "source": null,
+    "available": false
+  }
+}

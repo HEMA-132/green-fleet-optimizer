@@ -1,0 +1,95 @@
+{
+  "dataset": "fuel_prediction_dataset",
+  "target_columns": [
+    "fuel_consumption",
+    "co2_emissions"
+  ],
+  "marine_joined": false,
+  "marine_join_decision": "Marine observations were not joined to fuel records: fuel uses ship_id while marine uses MMSI, and the fuel records contain no timestamp or geographic key to establish a legitimate relationship.",
+  "source_row_counts": {
+    "fuel": 1440,
+    "marine": 200,
+    "ais_query_points": 200
+  },
+  "direct_ship_id_mmsi_overlap_count": 0,
+  "columns": {
+    "ship_id": {
+      "data_type": "string",
+      "role": "identifier",
+      "source_dataset": "fuel",
+      "description": "Fuel-source vessel identifier; not mapped to marine MMSI values."
+    },
+    "ship_type": {
+      "data_type": "categorical",
+      "role": "feature",
+      "source_dataset": "fuel",
+      "description": "Fuel-source vessel category."
+    },
+    "route_id": {
+      "data_type": "categorical",
+      "role": "metadata",
+      "source_dataset": "fuel",
+      "description": "Fuel-source route label retained as operational metadata."
+    },
+    "month": {
+      "data_type": "categorical",
+      "role": "feature",
+      "source_dataset": "fuel",
+      "description": "Fuel-source reporting month."
+    },
+    "distance": {
+      "data_type": "float",
+      "role": "feature",
+      "source_dataset": "fuel",
+      "description": "Reported voyage or period distance."
+    },
+    "fuel_type": {
+      "data_type": "categorical",
+      "role": "feature",
+      "source_dataset": "fuel",
+      "description": "Reported fuel type."
+    },
+    "weather_conditions": {
+      "data_type": "categorical",
+      "role": "feature",
+      "source_dataset": "fuel",
+      "description": "Reported weather category."
+    },
+    "engine_efficiency": {
+      "data_type": "float",
+      "role": "feature",
+      "source_dataset": "fuel",
+      "description": "Reported engine efficiency percentage."
+    },
+    "distance_per_efficiency": {
+      "data_type": "float",
+      "role": "feature",
+      "source_dataset": "fuel",
+      "description": "Distance divided by engine efficiency; zero efficiency yields missing."
+    },
+    "efficiency_inverse": {
+      "data_type": "float",
+      "role": "feature",
+      "source_dataset": "fuel",
+      "description": "Reciprocal of engine efficiency; zero efficiency yields missing."
+    },
+    "month_number": {
+      "data_type": "integer",
+      "role": "feature",
+      "source_dataset": "fuel",
+      "description": "Calendar month number derived from the source month label."
+    },
+    "fuel_consumption": {
+      "data_type": "float",
+      "role": "target",
+      "source_dataset": "fuel",
+      "description": "Fuel consumption target."
+    },
+    "co2_emissions": {
+      "data_type": "float",
+      "role": "target",
+      "source_dataset": "fuel",
+      "description": "CO2 emissions target."
+    }
+  }
+}

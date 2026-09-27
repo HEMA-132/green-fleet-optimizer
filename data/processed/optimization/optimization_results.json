@@ -1,0 +1,374 @@
+{
+  "problem": {
+    "decision_names": [
+      "route_id",
+      "fuel_type"
+    ],
+    "context_names": [
+      "ship_type",
+      "month",
+      "weather_conditions",
+      "engine_efficiency"
+    ],
+    "fixed_context": {
+      "ship_type": "Oil Service Boat",
+      "month": "April",
+      "weather_conditions": "Calm",
+      "engine_efficiency": 82.775
+    },
+    "route_distance_medians": {
+      "Escravos-Lagos": 121.72,
+      "Lagos-Apapa": 123.62,
+      "Port Harcourt-Lagos": 128.88,
+      "Warri-Bonny": 117.36
+    },
+    "categories": {
+      "route_id": [
+        "Escravos-Lagos",
+        "Lagos-Apapa",
+        "Port Harcourt-Lagos",
+        "Warri-Bonny"
+      ],
+      "fuel_type": [
+        "Diesel",
+        "HFO"
+      ],
+      "ship_type": [
+        "Fishing Trawler",
+        "Oil Service Boat",
+        "Surfer Boat",
+        "Tanker Ship"
+      ],
+      "month": [
+        "April",
+        "August",
+        "December",
+        "February",
+        "January",
+        "July",
+        "June",
+        "March",
+        "May",
+        "November",
+        "October",
+        "September"
+      ],
+      "weather_conditions": [
+        "Calm",
+        "Moderate",
+        "Stormy"
+      ]
+    },
+    "bounds": [
+      [
+        0.0,
+        3.0
+      ],
+      [
+        0.0,
+        1.0
+      ]
+    ],
+    "objective": "weighted normalized surrogate fuel consumption and CO2 emissions",
+    "target_scales": {
+      "fuel_consumption": 4844.246534722222,
+      "co2_emissions": 13365.454881944444
+    },
+    "config": {
+      "fuel_weight": 0.7,
+      "co2_weight": 0.3,
+      "population_size": 8,
+      "iterations": 3,
+      "seed": 11,
+      "context_ship_type": null,
+      "context_month": null,
+      "context_weather_conditions": null,
+      "context_engine_efficiency": null
+    },
+    "assumptions": [
+      "Route is controllable and determines distance by observed route median.",
+      "Fuel type is controllable among observed fuel categories.",
+      "Ship selection is unsupported because no fleet-assignment data exists.",
+      "Month, weather, ship type, and engine efficiency are fixed context.",
+      "Marine observations are not joined to fuel records."
+    ],
+    "limitations": [
+      "Engine efficiency is not treated as a controllable setting because causality is not established.",
+      "Route median is descriptive, not a navigational distance guarantee.",
+      "Results are surrogate experiments, not operational recommendations."
+    ],
+    "marine_joined": false
+  },
+  "results": [
+    {
+      "algorithm": "differential_evolution",
+      "best_objective": 0.5645479231588952,
+      "fuel_consumption": 2737.2890946163243,
+      "co2_emissions": 7529.475622728785,
+      "runtime_seconds": 1.4557916000048863,
+      "iterations": 3,
+      "convergence_history": [
+        {
+          "iteration": 1.0,
+          "best_objective": 0.5645479231588952
+        },
+        {
+          "iteration": 2.0,
+          "best_objective": 0.5645479231588952
+        },
+        {
+          "iteration": 3.0,
+          "best_objective": 0.5645479231588952
+        }
+      ],
+      "final_solution": {
+        "route_id": "Warri-Bonny",
+        "fuel_type": "HFO",
+        "distance": 117.36,
+        "ship_type": "Oil Service Boat",
+        "month": "April",
+        "weather_conditions": "Calm",
+        "engine_efficiency": 82.775
+      },
+      "final_vector": [
+        2.8449853598753254,
+        0.6218835927963828
+      ],
+      "config": {
+        "decision_names": [
+          "route_id",
+          "fuel_type"
+        ],
+        "context_names": [
+          "ship_type",
+          "month",
+          "weather_conditions",
+          "engine_efficiency"
+        ],
+        "fixed_context": {
+          "ship_type": "Oil Service Boat",
+          "month": "April",
+          "weather_conditions": "Calm",
+          "engine_efficiency": 82.775
+        },
+        "route_distance_medians": {
+          "Escravos-Lagos": 121.72,
+          "Lagos-Apapa": 123.62,
+          "Port Harcourt-Lagos": 128.88,
+          "Warri-Bonny": 117.36
+        },
+        "categories": {
+          "route_id": [
+            "Escravos-Lagos",
+            "Lagos-Apapa",
+            "Port Harcourt-Lagos",
+            "Warri-Bonny"
+          ],
+          "fuel_type": [
+            "Diesel",
+            "HFO"
+          ],
+          "ship_type": [
+            "Fishing Trawler",
+            "Oil Service Boat",
+            "Surfer Boat",
+            "Tanker Ship"
+          ],
+          "month": [
+            "April",
+            "August",
+            "December",
+            "February",
+            "January",
+            "July",
+            "June",
+            "March",
+            "May",
+            "November",
+            "October",
+            "September"
+          ],
+          "weather_conditions": [
+            "Calm",
+            "Moderate",
+            "Stormy"
+          ]
+        },
+        "bounds": [
+          [
+            0.0,
+            3.0
+          ],
+          [
+            0.0,
+            1.0
+          ]
+        ],
+        "objective": "weighted normalized surrogate fuel consumption and CO2 emissions",
+        "target_scales": {
+          "fuel_consumption": 4844.246534722222,
+          "co2_emissions": 13365.454881944444
+        },
+        "config": {
+          "fuel_weight": 0.7,
+          "co2_weight": 0.3,
+          "population_size": 8,
+          "iterations": 3,
+          "seed": 11,
+          "context_ship_type": null,
+          "context_month": null,
+          "context_weather_conditions": null,
+          "context_engine_efficiency": null
+        },
+        "assumptions": [
+          "Route is controllable and determines distance by observed route median.",
+          "Fuel type is controllable among observed fuel categories.",
+          "Ship selection is unsupported because no fleet-assignment data exists.",
+          "Month, weather, ship type, and engine efficiency are fixed context.",
+          "Marine observations are not joined to fuel records."
+        ],
+        "limitations": [
+          "Engine efficiency is not treated as a controllable setting because causality is not established.",
+          "Route median is descriptive, not a navigational distance guarantee.",
+          "Results are surrogate experiments, not operational recommendations."
+        ],
+        "marine_joined": false
+      }
+    },
+    {
+      "algorithm": "qpso",
+      "best_objective": 0.5645479231588952,
+      "fuel_consumption": 2737.2890946163243,
+      "co2_emissions": 7529.475622728785,
+      "runtime_seconds": 1.1059617999999318,
+      "iterations": 3,
+      "convergence_history": [
+        {
+          "iteration": 1.0,
+          "best_objective": 0.5645479231588952
+        },
+        {
+          "iteration": 2.0,
+          "best_objective": 0.5645479231588952
+        },
+        {
+          "iteration": 3.0,
+          "best_objective": 0.5645479231588952
+        }
+      ],
+      "final_solution": {
+        "route_id": "Warri-Bonny",
+        "fuel_type": "HFO",
+        "distance": 117.36,
+        "ship_type": "Oil Service Boat",
+        "month": "April",
+        "weather_conditions": "Calm",
+        "engine_efficiency": 82.775
+      },
+      "final_vector": [
+        2.8449853598753254,
+        0.6218835927963828
+      ],
+      "config": {
+        "decision_names": [
+          "route_id",
+          "fuel_type"
+        ],
+        "context_names": [
+          "ship_type",
+          "month",
+          "weather_conditions",
+          "engine_efficiency"
+        ],
+        "fixed_context": {
+          "ship_type": "Oil Service Boat",
+          "month": "April",
+          "weather_conditions": "Calm",
+          "engine_efficiency": 82.775
+        },
+        "route_distance_medians": {
+          "Escravos-Lagos": 121.72,
+          "Lagos-Apapa": 123.62,
+          "Port Harcourt-Lagos": 128.88,
+          "Warri-Bonny": 117.36
+        },
+        "categories": {
+          "route_id": [
+            "Escravos-Lagos",
+            "Lagos-Apapa",
+            "Port Harcourt-Lagos",
+            "Warri-Bonny"
+          ],
+          "fuel_type": [
+            "Diesel",
+            "HFO"
+          ],
+          "ship_type": [
+            "Fishing Trawler",
+            "Oil Service Boat",
+            "Surfer Boat",
+            "Tanker Ship"
+          ],
+          "month": [
+            "April",
+            "August",
+            "December",
+            "February",
+            "January",
+            "July",
+            "June",
+            "March",
+            "May",
+            "November",
+            "October",
+            "September"
+          ],
+          "weather_conditions": [
+            "Calm",
+            "Moderate",
+            "Stormy"
+          ]
+        },
+        "bounds": [
+          [
+            0.0,
+            3.0
+          ],
+          [
+            0.0,
+            1.0
+          ]
+        ],
+        "objective": "weighted normalized surrogate fuel consumption and CO2 emissions",
+        "target_scales": {
+          "fuel_consumption": 4844.246534722222,
+          "co2_emissions": 13365.454881944444
+        },
+        "config": {
+          "fuel_weight": 0.7,
+          "co2_weight": 0.3,
+          "population_size": 8,
+          "iterations": 3,
+          "seed": 11,
+          "context_ship_type": null,
+          "context_month": null,
+          "context_weather_conditions": null,
+          "context_engine_efficiency": null
+        },
+        "assumptions": [
+          "Route is controllable and determines distance by observed route median.",
+          "Fuel type is controllable among observed fuel categories.",
+          "Ship selection is unsupported because no fleet-assignment data exists.",
+          "Month, weather, ship type, and engine efficiency are fixed context.",
+          "Marine observations are not joined to fuel records."
+        ],
+        "limitations": [
+          "Engine efficiency is not treated as a controllable setting because causality is not established.",
+          "Route median is descriptive, not a navigational distance guarantee.",
+          "Results are surrogate experiments, not operational recommendations."
+        ],
+        "marine_joined": false
+      }
+    }
+  ]
+}
